@@ -1,0 +1,54 @@
+#screen, #main {
+  display: none;
+  background-color: black;
+  width: 560px;
+  height: 700px;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left:0; bottom: 0; right: 0;
+}
+
+.menu {
+  display: flex;
+  align-items:center;
+  height: 100%;
+}
+
+.button {
+  width: 150px;
+  margin: 0 auto;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid blue;
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#game-over-flex {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#game-over {
+  display: none;
+  z-index: 1;
+  color: white;
+  overflow: auto;
+  margin: 0 auto;
+  position: absolute;
+  top: 0; left:0; bottom: 0; right: 0;
+}
+
+h2 {
+  white-space:nowrap;
+}
+
+#score {
+  display: inline-block;
+}

@@ -1,8 +1,26 @@
+<!DOCTYPE html>
+<html>
 <head>
+	<meta charset="UTF-8">
 	<title>Pacman Clone in HTML5</title>
+	<link rel="stylesheet" href="pacman.css" type="text/css" media="screen">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 	<canvas id="screen"></canvas>
+	<div id="main">
+		<div class="menu">
+			<a class="button play">Start Game</a>
+		</div>
+	</div>
+	<div id="game-over">
+		<div class="menu">
+			<div id="game-over-flex">
+				<h2>You got a final score of <div id="score"></div>.</h2>
+				<div class="button reset">Play Again</div>
+			</div>
+		</div>
+	</div>
 	<script src="pacman.js"></script>
-	<div id="score">0</div>
 </body>
+</html>

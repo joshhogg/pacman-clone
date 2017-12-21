@@ -46,7 +46,9 @@
   		   setTimeout(function () {
   		       requestAnimationFrame(tick);
   		   }, 1000 / fps);
-      };
+      } else {
+        $('#game-over').show();
+      }
     };
     tick();
   };
@@ -65,6 +67,7 @@
         // 'game' = context for rendering, this = Game Object for grid access
   			this.ghosts[i].update(game, this.ghosts[i], this.world, this);
   		};
+
       updateScore(score);
     },
 
@@ -95,6 +98,13 @@
     	for (var i = 0; i < this.pacman.lives; i++) {
     		drawGameObj(game, {size:{x: 18, y: 18}, center:{x:(2+(2*i))*20,y: 34*20}}, "#FFEE00")
     	};
+
+      //Update score
+      game.font = '30px fantasy';
+      game.textAlign = 'center';
+      game.fillStyle = '#ffffff';
+      var scoreText = "Score: " + score;
+      game.fillText(scoreText, 14*20, 30);
     }
   };
 
@@ -567,6 +577,7 @@
 	};
 
   var updateScore = function(score) {
+    //x = 14.5 y = 0
     var ele = document.getElementById("score");
     ele.textContent = score;
   };
@@ -594,6 +605,19 @@
 	var score = 0;
 
   window.onload = function() {
-	   new Game("screen");
+	   $('#main').show();
   };
+
+  $('.play').click(function() {
+    $('#main').hide();
+    $('#screen').show();
+    new Game("screen");
+  });
+
+  $('.reset').click(function() {
+    new Game("screen");
+    score = 0;
+    $('#game-over').hide();
+  })
+
 })();
