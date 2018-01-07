@@ -198,22 +198,22 @@
     this.baseTargetCell = targets[id];
 
     //Function for finding pacman's path
-    var getPacmanTilePath = function(pm, tileInc) {
-      if (pm.direction == null) {
-        var pmDir = 'left';
+    var getPacmanTilePath = function(pacman, tileInc) {
+      if (pacman.direction == null) {
+        var pacmanDir = 'left';
       } else {
-        var pmDir = pm.direction;
+        var pacmanDir = pacman.direction;
       };
-      var tCell = {};
-      tCell.center = Object.assign({}, pm.center);
-      if (pmDir == 'left') {
-        tCell.center.x += -tileInc*20;
-      } else if (pmDir == 'right') {
-        tCell.center.x += tileInc*20;
-      } else if (pmDir == 'up') {
-        tCell.center.y += -tileInc*20;
-      } else if (pmDir == 'down') {
-        tCell.center.y += tileInc*20;
+      var targetCell = {};
+      targetCell.center = Object.assign({}, pacman.center);
+      if (pacmanDir == 'left') {
+        targetCell.center.x += -tileInc*20;
+      } else if (pacmanDir == 'right') {
+        targetCell.center.x += tileInc*20;
+      } else if (pacmanDir == 'up') {
+        targetCell.center.y += -tileInc*20;
+      } else if (pacmanDir == 'down') {
+        targetCell.center.y += tileInc*20;
       }
       return tCell;
     }
