@@ -235,7 +235,7 @@
       // 2 tiles in front of pacman, times 2.
       else if (this.color == 'aqua') {
 
-        var tCell = getPacmanTilePath(GAME.pacman, 2); // target cell 2 in front of pacman
+        var targetCell = getPacmanTilePath(GAME.pacman, 2); // target cell 2 in front of pacman
         var rLoc = Object.assign({}, GAME.ghosts[2].center); // red ghost Location
 
         // Find x and y values of the vector drawn between rLoc and tCell
