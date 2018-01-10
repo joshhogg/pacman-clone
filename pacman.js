@@ -215,7 +215,7 @@
       } else if (pacmanDir == 'down') {
         targetCell.center.y += tileInc*20;
       }
-      return tCell;
+      return targetCell;
     }
 
     //finds target cell when the ghosts aren't in 'scatter' mode
@@ -239,13 +239,13 @@
         var rLoc = Object.assign({}, GAME.ghosts[2].center); // red ghost Location
 
         // Find x and y values of the vector drawn between rLoc and tCell
-        var xDif = tCell.center.x - rLoc.x;
-        var yDif = tCell.center.y - rLoc.y;
+        var xDif = targetCell.center.x - rLoc.x;
+        var yDif = targetCell.center.y - rLoc.y;
         // Add this value to tCell again to double the vector
 
-        tCell.center.x += xDif;
-        tCell.center.y += yDif;
-        return tCell;
+        targetCell.center.x += xDif;
+        targetCell.center.y += yDif;
+        return targetCell;
 
       //Orange is timid and will only pursue pacman if he is at least 8
       //cells away, otherwise he reverts to his base target cell
